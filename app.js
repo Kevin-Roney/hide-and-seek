@@ -17,19 +17,22 @@ let totalGuesses = 0;
 
 shedButton.addEventListener('click', () => {
     // get a random item to call the 'correct spot'
-    handleGuess('shed');
+    const correctSpot = getRandomHidingSpot();
+    handleGuess('shed', correctSpot);
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
 });
 
 treeButton.addEventListener('click', () => {
     // get a random item to call the 'correct spot'
-    handleGuess('tree');
+    const correctSpot = getRandomHidingSpot();
+    handleGuess('tree', correctSpot);
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
 });
 
 boulderButton.addEventListener('click', () => {
     // get a random item to call the 'correct spot'
-    handleGuess('boulder');
+    const correctSpot = getRandomHidingSpot();
+    handleGuess('boulder', correctSpot);
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
 });
 
@@ -47,6 +50,7 @@ function getRandomHidingSpot() {
     // use the random index above and the array of hidingPlaces to get a random hiding place string
 
     // return that random hiding place string
+    return index;
 }
 
 function handleGuess(userGuess, correctSpot) {
@@ -57,7 +61,7 @@ function handleGuess(userGuess, correctSpot) {
     treeContainer.src = '/assets/tree.webp';
     boulderContainer.src = '/assets/boulder.png';
     // then increment the guesses
-    totalEl++;
+    totalGuesses++;
     // then use getElementById and the correctSpot string to grab the appropriate container from the DOM
 
     // then add the .face css class to that element so that the face shows up
