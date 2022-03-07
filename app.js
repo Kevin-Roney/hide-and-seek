@@ -57,7 +57,7 @@ function handleGuess(userGuess, correctSpot) {
     treeContainer.src = '/assets/tree.webp';
     boulderContainer.src = '/assets/boulder.png';
     // then increment the guesses
-
+    totalEl++;
     // then use getElementById and the correctSpot string to grab the appropriate container from the DOM
 
     // then add the .face css class to that element so that the face shows up
